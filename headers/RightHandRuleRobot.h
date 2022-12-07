@@ -1,0 +1,5 @@
+#ifndef RIGHTHANDRULEROBOT_H
+#define RIGHTHANDRULEROBOT_H
+#include<iostream>
+
+#endif //RIGHTHANDRULEROBOT_H
