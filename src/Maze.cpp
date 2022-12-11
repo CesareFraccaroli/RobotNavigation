@@ -70,7 +70,7 @@ void Maze::setElement(const int i,const int j,const char elem)
 }
 bool Maze::GoDown()
 {
-if(matrix[CP.getrow()+1][CP.getcolumn()]=='*'||CP.getrow()==8)
+if(matrix[CP.getrow()+1][CP.getcolumn()]=='*'||matrix[CP.getrow()+1][CP.getcolumn()]=='/'||CP.getrow()==8)
     {
         return false;
     }else
@@ -83,7 +83,7 @@ if(matrix[CP.getrow()+1][CP.getcolumn()]=='*'||CP.getrow()==8)
 }
 bool Maze::GoUp()
 {
-    if(getElement(CP.getrow()-1,CP.getcolumn())=='*'||CP.getrow()==0)
+    if(getElement(CP.getrow()-1,CP.getcolumn())=='*'||getElement(CP.getrow()-1,CP.getcolumn())=='/'||CP.getrow()==0)
     {
         return false;
     }
@@ -98,7 +98,7 @@ bool Maze::GoUp()
 }
 bool Maze::GoLeft()
 {
-    if(getElement(CP.getrow()-1,CP.getcolumn())=='*'||CP.getcolumn()==0)
+    if(getElement(CP.getrow()-1,CP.getcolumn())=='*'||getElement(CP.getrow()-1,CP.getcolumn())=='/'||CP.getcolumn()==0)
     {
         return false;
     }
@@ -113,9 +113,8 @@ bool Maze::GoLeft()
 }
 bool Maze::GoRight()
 {
-    if(matrix[CP.getrow()][CP.getcolumn()+1]=='*'||CP.getcolumn()==8)
+    if(matrix[CP.getrow()][CP.getcolumn()+1]=='*'||matrix[CP.getrow()][CP.getcolumn()+1]=='/'||CP.getcolumn()==8)
     {
-        std::cout<<"errore\n";
         return false;
     }
     else
@@ -138,4 +137,18 @@ std::ostream& operator <<(std::ostream& os,Maze m)
 		os<<std::endl;
 	}
 	return os;
+}
+
+coordinate& coordinate::operator=(coordinate& pair1)
+{
+    row=pair1.getrow();
+    column=pair1.getcolumn();
+    return *this;
+}
+bool coordinate::operator==(coordinate& pair1)
+{
+    if(row==pair1.getrow()&&column==pair1.getcolumn())
+        return true;
+    else
+        return false;
 }
