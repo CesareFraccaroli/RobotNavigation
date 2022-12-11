@@ -2,25 +2,31 @@
 #define MAZE_H
 
 #include<iostream>
+#include<coordinate.h>
 #include<fstream>
 #include<string>
 #include<vector>
 
-struct coordinate
-    {
-    private:
-        int x,y;
-    public:
-        coordinate(): x{0},y{0}{};
-        coordinate(int a,int b): x{a},y{b}{};
-        int getrow(){return x;}
-        int getcolumn(){return y;}
-        void setrow(int a){x=a;}
-        void setcolumn(int b){y=b;}
-    };
+
     
 class Maze{
 public:
+
+    /*class coordinate
+    {
+    private:
+        int row,column;
+    public:
+        coordinate(): row{0},column{0}{};
+        coordinate(int a,int b): row{a},column{b}{};
+        int getrow(){return row;}
+        int getcolumn(){return column;}
+        void setrow(int a){row=a;}
+        void setcolumn(int b){column=b;}
+        coordinate& operator = (coordinate& pair1);
+        bool operator== (coordinate& pair1);
+    };*/
+
 
     class InvalidMove{};
 	Maze();
@@ -40,7 +46,6 @@ public:
     bool isWin();
     coordinate getCurrentPosition();
 private:
-	//std::vector<std::vector<char>> matrix;
 	char matrix[9][9];
 	coordinate ExitCoordinates;
 	coordinate CP; //CurrentPosition
