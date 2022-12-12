@@ -2,7 +2,6 @@
 #define ROBOT_H
 #include <iostream>
 #include <Maze.h>
-#include <coordinate.h>
 
 class Robot{
 
@@ -20,10 +19,10 @@ class Robot{
     Robot(); 
     Robot(Maze& m); 
     virtual bool move(Maze& m);
-    void setRobotCP(coordinate pair);
-    coordinate getRobotCP();
+    void setRobotCP(Maze::coordinate pair);
+    Maze::coordinate getRobotCP();
 private:
-    coordinate RobotCP; //robot current position
+    Maze::coordinate RobotCP; //robot current position
     faces f;
 };
 #endif //RIGHTHANDRULEROBOT_H

@@ -2,7 +2,7 @@
 #define MAZE_H
 
 #include<iostream>
-#include<coordinate.h>
+
 #include<fstream>
 #include<string>
 #include<vector>
@@ -12,7 +12,7 @@
 class Maze{
 public:
 
-    /*class coordinate
+    class coordinate
     {
     private:
         int row,column;
@@ -25,7 +25,7 @@ public:
         void setcolumn(int b){column=b;}
         coordinate& operator = (coordinate& pair1);
         bool operator== (coordinate& pair1);
-    };*/
+    };
 
 
     class InvalidMove{};

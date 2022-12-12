@@ -3,7 +3,6 @@
 #include <iostream>
 #include <Robot.h>
 #include <Maze.h>
-#include <coordinate.h>
 class RandomRobot:public Robot{
     RandomRobot();
     RandomRobot(Maze& m);
