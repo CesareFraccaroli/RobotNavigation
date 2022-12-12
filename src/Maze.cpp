@@ -138,14 +138,17 @@ std::ostream& operator <<(std::ostream& os,Maze m)
 	}
 	return os;
 }
-
-coordinate& coordinate::operator=(coordinate& pair1)
+Maze::coordinate Maze::getCurrentPosition()
+{
+    return CP;
+}
+Maze::coordinate& Maze::coordinate::operator=(Maze::coordinate& pair1)
 {
     row=pair1.getrow();
     column=pair1.getcolumn();
     return *this;
 }
-bool coordinate::operator==(coordinate& pair1)
+bool Maze::coordinate::operator==(Maze::coordinate& pair1)
 {
     if(row==pair1.getrow()&&column==pair1.getcolumn())
         return true;

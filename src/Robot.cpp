@@ -2,18 +2,22 @@
 
 Robot::Robot()
 {
-    coordinate a(0,0);
+    Maze::coordinate a(0,0);
     RobotCP=a;
 }
 Robot::Robot(Maze& m)
 {
     setRobotCP(m.getCurrentPosition());
 }
-void Robot::setRobotCP(coordinate pair)
+bool Robot::move(Maze& m)
+{
+    return false;
+}
+void Robot::setRobotCP(Maze::coordinate pair)
 {
     RobotCP=pair;
 }
-coordinate Robot::getRobotCP()
+Maze::coordinate Robot::getRobotCP()
 {
     return RobotCP;
 }

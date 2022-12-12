@@ -3,7 +3,9 @@
 using namespace std;
 int main()
 {
+    
 	Maze m("MazeFile.txt");
+    cout<<m<<endl;
 	m.GoDown();
     cout<<m<<endl;
     m.GoRight();
